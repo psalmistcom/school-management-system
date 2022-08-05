@@ -1,0 +1,11 @@
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+
+#RewriteRule ^([^\.]+)$ $1.php [NC,L]
+RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]
+
+#This is for the 404 error page 
+ErrorDocument 404 http://localhost/school-management-system/404
